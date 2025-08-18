@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: tomcat-pod
+  namespace: test-ns
+  labels: 
+    app: appserver
+    author: saiteja
+spec:
+  containers:
+    - name: tomact
+      image: tomee
+      ports:
+        - containerPort: 8080
+          hostPort: 9090
+...
