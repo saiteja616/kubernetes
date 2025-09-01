@@ -5,7 +5,7 @@ metadata:
   name: nginx-pod
   labels: 
     author: saiteja
-    typo: proxy
+    type: proxy
 spec:
   containers:
     - name: mynginx
