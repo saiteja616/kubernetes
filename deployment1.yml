@@ -4,16 +4,19 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   labels:
+    author: saiteja
     type: proxy
 spec:
   replicas: 3
   selector: 
-    matchLabels: 
+    matchLabels:
+      author: saiteja 
       type: proxy
   template:
     metadata: 
       name: nginx-pod
       labels: 
+        author: saiteja
         type: proxy
     spec:
       containers:
