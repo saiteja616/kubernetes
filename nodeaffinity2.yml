@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: nginx-deployment
+  labels:
+    name: saiteja
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      name: saiteja
+  template:
+    metadata:
+      name: nginx-pod
+      labels: 
+        name: saiteja
+    spec:
+      containers: 
+        - name: mynginx
+          image: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: guna
+                    operator: In
+                    values:
+                      - saiteja
+...
+
